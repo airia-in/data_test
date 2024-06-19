@@ -16,7 +16,7 @@ function getLimitedData(jsonObject, limit, offset) {
 
     // Slice the array to get the limited data
     const limitedData = personArray.slice(offset, offset + limit);
-    return limitedData;
+    return {"count":personArray.length,"data":limitedData};
 }
 
 // Create HTTP server
