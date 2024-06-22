@@ -3,11 +3,12 @@ const fs = require('fs');
 const url = require('url');
 
 // Read data from 5MB.json
-const data = JSON.parse(fs.readFileSync('./5MB.json', 'utf8'));
-
+const data = JSON.parse(fs.readFileSync('./bs_1_9_2023_31_05_2024.json', 'utf8'));
+const data2 = JSON.parse(fs.readFileSync('./data2.json', 'utf8'));
+const final_data = [...data, ...data2]
 // Function to get limited data
 function getLimitedData(jsonObject, limit, offset) {
-    const personArray = jsonObject.person;
+    const personArray = jsonObject;
 
     // Validate limit and offset
     if (limit < 0 || offset < 0 || offset >= personArray.length) {
@@ -24,7 +25,7 @@ const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
     const pathname = parsedUrl.pathname;
 
-    if (req.method === 'GET' && pathname === '/persons') {
+    if (req.method === 'GET' && pathname === '/objects') {
         // Get limit and offset from query parameters
         const limit = parseInt(parsedUrl.query.limit, 10);
         const offset = parseInt(parsedUrl.query.offset, 10);
@@ -36,7 +37,7 @@ const server = http.createServer((req, res) => {
         }
 
         // Get the limited data
-        const result = getLimitedData(data, limit, offset);
+        const result = getLimitedData(final_data, limit, offset);
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(result));
@@ -47,7 +48,7 @@ const server = http.createServer((req, res) => {
 });
 
 // Start server
-const PORT = 3000;
+const PORT = 3001;
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
