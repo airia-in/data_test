@@ -5,10 +5,10 @@ const url = require('url');
 // List of S3 URLs to fetch JSON data from
 const s3Urls = [
     'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData1.json',
-    'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData2.json',
-    'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData3.json',
-    'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData4.json',
-    'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData5.json'
+    // 'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData2.json',
+    // 'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData3.json',
+    // 'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData4.json',
+    // 'https://airia-dataset.s3.ap-south-1.amazonaws.com/bsData5.json'
 ];
 
 // Function to fetch data from S3 URL
