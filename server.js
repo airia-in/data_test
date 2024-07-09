@@ -10,7 +10,7 @@ function getLimitedData(jsonObject, limit, offset) {
     const dataArray = jsonObject.data; // Access the array of objects
 
     // Validate limit and offset
-    if (limit < 0  offset < 0  offset >= dataArray.length) {
+    if (limit < 0 || offset < 0 || offset >= dataArray.length) {
         return { count: jsonObject.count, data: [] };
     }
 
