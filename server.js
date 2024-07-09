@@ -3,9 +3,9 @@ const fs = require('fs');
 const url = require('url');
 
 // Read data from 5MB.json
-const data = JSON.parse(fs.readFileSync('./bs_1_9_2023_31_05_2024.json', 'utf8'));
-const data2 = JSON.parse(fs.readFileSync('./data2.json', 'utf8'));
-const final_data = [...data, ...data2]
+const data = JSON.parse(fs.readFileSync('./bsData1.json', 'utf8'));
+//const data2 = JSON.parse(fs.readFileSync('./data2.json', 'utf8'));
+const final_data = [...data]
 // Function to get limited data
 function getLimitedData(jsonObject, limit, offset) {
     const personArray = jsonObject;
