@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
         const limit = parseInt(parsedUrl.query.limit, 10);
         const offset = parseInt(parsedUrl.query.offset, 10);
 
-        if (isNaN(limit) || isNaN(offset)) {
+        if (isNaN(limit) || limit < 0 || isNaN(offset) || offset < 0) {
             res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Invalid limit or offset' }));
             return;
