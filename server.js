@@ -19,7 +19,7 @@ function getlimitedData(jsonObject, lim, offset) {
     return { count: jsonObject.count, data: limitedData };
 }
 
-// Creating HTTP serve
+// Create HTTP server
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true);
     const pathname = parsedUrl.pathname;
